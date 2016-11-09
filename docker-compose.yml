@@ -10,5 +10,6 @@ services:
       - docker-entrypoint.sh
       - solr-precreate
       - mycore
+      - /opt/docker-solr/myconfig
 volumes:
   data:

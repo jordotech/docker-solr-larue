@@ -1,3 +1,4 @@
+
 FROM    java:openjdk-8-jre
 MAINTAINER  Martijn Koster "mak-docker@greenhills.co.uk"
 
@@ -42,7 +43,8 @@ RUN mkdir -p /opt/solr && \
   chown -R $SOLR_USER:$SOLR_USER /opt/solr && \
   mkdir /docker-entrypoint-initdb.d /opt/docker-solr/
 
-COPY ./scripts /opt/docker-solr/scripts
+COPY scripts /opt/docker-solr/scripts
+COPY myconfig /opt/docker-solr/myconfig
 RUN chown -R $SOLR_USER:$SOLR_USER /opt/docker-solr
 
 ENV PATH /opt/solr/bin:/opt/docker-solr/scripts:$PATH
@@ -53,15 +55,3 @@ USER $SOLR_USER
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["solr"]
-
-
-
-
-
-#FROM library/solr
-#RUN echo 'we are running some # of cool things'
-#COPY ./hello.sh /docker-entrypoint-initdb.d/hello.sh
-#COPY ./schema.xml server/solr/mycores/mycore/conf/schema.xml
-#COPY ./schema.xml server/solr/foo.xml
-#COPY ./schema.xml server/solr/mycores/bar.xml
-#COPY ./schema.xml
