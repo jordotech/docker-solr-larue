@@ -1,0 +1,1 @@
+docker build --rm=false -t jordotech/laruesolr . && docker push jordotech/laruesolr

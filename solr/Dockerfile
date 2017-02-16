@@ -51,7 +51,9 @@ ENV PATH /opt/solr/bin:/opt/docker-solr/scripts:$PATH
 
 EXPOSE 8983
 WORKDIR /opt/solr
-USER $SOLR_USER
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+USER $SOLR_USER
+#RUN /opt/docker-solr/scripts/docker-entrypoint.sh solr-precreate mycore /opt/docker-solr/myconfig
+ENTRYPOINT ["docker-entrypoint.sh", "solr-precreate", "mycore", "/opt/docker-solr/myconfig"]
+RUN ls /opt/docker-solr
 CMD ["solr"]
