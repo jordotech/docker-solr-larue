@@ -77,11 +77,19 @@ haystack/templates/search_configuration/solr.xml
    <field name="django_ct" type="string" indexed="true" stored="true" multiValued="false"/>
    <field name="django_id" type="string" indexed="true" stored="true" multiValued="false"/>
 
-   <field name="brands" type="text_en" indexed="true" stored="true" multiValued="false" />
+   <field name="main_image_picture" type="text_en" indexed="true" stored="true" multiValued="false" />
 
    <field name="text" type="edge_ngram" indexed="true" stored="true" multiValued="false" />
 
+   <field name="unit_price" type="text_en" indexed="true" stored="true" multiValued="false" />
+
    <field name="brands_exact" type="string" indexed="true" stored="true" multiValued="false" />
+
+   <field name="absolute_url" type="text_en" indexed="true" stored="true" multiValued="false" />
+
+   <field name="brands" type="text_en" indexed="true" stored="true" multiValued="false" />
+
+   <field name="product_name" type="text_en" indexed="true" stored="true" multiValued="false" />
 
    <field name="categories" type="string" indexed="true" stored="true" multiValued="true" />
 
